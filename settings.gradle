@@ -1,0 +1,9 @@
+rootProject.name = "NewStackTest"
+include ':app'
+include ':core'
+include ':data-dogs'
+include ':data-cats'
+include ':feature-dogs'
+include ':feature-components'
+include ':feature-cats'
+include ':network'

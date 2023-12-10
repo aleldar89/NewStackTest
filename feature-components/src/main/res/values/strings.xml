@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cats">Cats</string>
+    <string name="dogs">Dogs</string>
+    <string name="menu">Menu</string>
+    <string name="logo">Logo</string>
+    <string name="image">Image</string>
+    <string name="up">Up</string>
+    <string name="favourite">favourite</string>
+    <string name="unfavourite">unfavourite</string>
+</resources>

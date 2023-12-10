@@ -1,0 +1,65 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'dagger.hilt.android.plugin'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'realm-android'
+}
+
+android {
+    namespace 'com.example.newstacktest'
+
+    buildFeatures {
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion compose_version
+    }
+
+    defaultConfig {
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    packaging {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation project(path: ':core')
+    implementation project(path: ':feature-dogs')
+    implementation project(path: ':feature-cats')
+    implementation project(path: ':feature-components')
+
+    implementation "androidx.core:core-ktx:$core_version"
+    implementation "androidx.activity:activity-compose:$activity_compose_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-compose:$lifecycle_version"
+    implementation "com.google.android.material:material:$material_version"
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+
+    implementation platform('androidx.compose:compose-bom:2023.03.00')
+    implementation "androidx.compose.ui:ui"
+    implementation "androidx.compose.material:material-android"
+    implementation "androidx.compose.ui:ui-tooling-preview"
+    implementation "androidx.compose.ui:ui-graphics"
+    implementation "androidx.compose.material3:material3"
+    implementation "androidx.compose.foundation:foundation"
+    implementation "androidx.compose.runtime:runtime-livedata"
+
+
+}
